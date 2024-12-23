@@ -4254,6 +4254,9 @@ fn tab_secondary_click(
                 child: child_left.clone(),
                 kind: TabCloseKind::CloseToLeft,
             });
+        }))
+        .entry(MenuItem::new("Keep Tab").action(move || {
+            internal_command.send(InternalCommand::MakeConfirmed);
         }));
     show_context_menu(menu, None);
 }
